@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --cream: #faf6ec;
+        --tint: #fcebb6;
+        --card: #ffffff;
+        --ink: #17171a;
+        --gold: #f2b705;
+        --gold-text: #b98200;
+        --muted: #7a746a;
+        --red: #d9483b;
+        --green: #2e9e5b;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--cream);
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        font-family: "Poppins", sans-serif;
+        color: var(--ink);
+      }
+      #bg {
+        position: absolute;
+        inset: 0;
+        background: var(--cream);
+      }
+      #bg-blob {
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+        left: -260px;
+        top: 1330px;
+        border-radius: 50%;
+        background: var(--tint);
+      }
+      #brand {
+        position: absolute;
+        left: 80px;
+        top: 240px;
+        z-index: 20;
+      }
+      #brand .w1 {
+        font-weight: 800;
+        font-size: 40px;
+        letter-spacing: 0.22em;
+        line-height: 1;
+      }
+      #brand .w2 {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 4px 14px 3px;
+        background: var(--gold);
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.3em;
+        border-radius: 4px;
+      }
+      /* narrator */
+      #guy {
+        position: absolute;
+        left: 50px;
+        top: 1330px;
+        width: 400px;
+        height: 560px;
+        z-index: 30;
+      }
+      #guy svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+      /* captions */
+      .cap {
+        position: absolute;
+        inset: 0;
+        z-index: 40;
+      }
+      .cap span {
+        position: absolute;
+        left: 480px;
+        top: 1392px;
+        max-width: 470px;
+        padding: 16px 28px 14px;
+        background: var(--card);
+        border: 5px solid var(--ink);
+        border-radius: 30px 30px 30px 6px;
+        font-weight: 800;
+        font-size: 50px;
+        line-height: 1.12;
+        box-shadow: 0 10px 0 var(--gold);
+      }
+      /* shared scene pieces */
+      .wrap {
+        position: absolute;
+        left: 80px;
+        right: 80px;
+        top: 390px;
+        height: 940px;
+      }
+      .num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 120px;
+        border-radius: 30px;
+        background: var(--gold);
+        font-weight: 800;
+        font-size: 66px;
+        line-height: 1;
+      }
+      .kicker {
+        margin-top: 26px;
+        font-weight: 600;
+        font-size: 38px;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+      .h {
+        margin-top: 10px;
+        font-weight: 800;
+        font-size: 84px;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+      }
+      .mk {
+        position: relative;
+        display: inline-block;
+        padding: 0 14px;
+        margin: 0 -6px;
+      }
+      .mk i {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 12%;
+        bottom: 6%;
+        background: var(--gold);
+        border-radius: 12px;
+      }
+      .mk b {
+        position: relative;
+        font-weight: 800;
+      }
+      .card {
+        background: var(--card);
+        border-radius: 36px;
+        box-shadow: 0 18px 50px rgba(23, 23, 26, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{{TOTAL}}" data-width="1080" data-height="1920">
+      <div id="bg"><div id="bg-blob" data-layout-ignore></div></div>
+      <div id="brand">
+        <div class="w1">YOURBRAND</div>
+        <div class="w2">DIGITAL</div>
+      </div>
+
+<!--HOSTS-->
+
+      <div id="guy" data-layout-ignore>
+        <svg viewBox="0 0 400 560">
+          <g id="guy-all">
+            <!-- raised arm -->
+            <g id="guy-arm">
+              <path d="M318 452 L372 330" stroke="#f2b705" stroke-width="54" stroke-linecap="round" fill="none" />
+              <path d="M318 452 L372 330" stroke="#17171a" stroke-width="54" stroke-linecap="round" fill="none" opacity="0.06" />
+              <circle cx="378" cy="312" r="28" fill="#e9b48a" />
+              <path d="M382 296 L398 250" stroke="#e9b48a" stroke-width="18" stroke-linecap="round" />
+              <path d="M352 372 L378 384" stroke="#faf6ec" stroke-width="8" stroke-linecap="round" />
+            </g>
+            <g id="guy-head">
+              <!-- long hair behind -->
+              <path d="M84 232 C66 104 150 54 206 60 C278 54 340 116 320 238 C318 304 334 356 346 408 L54 408 C66 356 84 304 84 232 Z" fill="#17171a" />
+            </g>
+            <!-- body: gold kurta -->
+            <path d="M34 560 C34 426 104 366 200 366 C296 366 366 426 366 560 Z" fill="#f2b705" />
+            <path d="M162 366 L200 424 L238 366 Z" fill="#e9b48a" />
+            <path d="M162 366 L200 424 L238 366" fill="none" stroke="#17171a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" />
+            <path d="M200 430 L200 500" stroke="#faf6ec" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 14" />
+            <circle cx="286" cy="480" r="28" fill="#faf6ec" />
+            <text x="286" y="494" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="38" fill="#17171a">S</text>
+            <!-- face -->
+            <g id="guy-face">
+              <rect x="174" y="316" width="52" height="64" rx="18" fill="#dba27a" />
+              <circle cx="99" cy="240" r="19" fill="#e9b48a" />
+              <circle cx="301" cy="240" r="19" fill="#e9b48a" />
+              <circle cx="99" cy="268" r="9" fill="#f2b705" />
+              <circle cx="301" cy="268" r="9" fill="#f2b705" />
+              <ellipse cx="200" cy="230" rx="102" ry="112" fill="#f0bf96" />
+              <path d="M96 216 C88 124 158 84 214 90 C288 84 324 152 306 220 C294 180 268 152 230 146 C204 180 152 202 96 216 Z" fill="#17171a" />
+              <path d="M142 203 Q160 191 178 203 M222 203 Q240 191 258 203" fill="none" stroke="#17171a" stroke-width="6" stroke-linecap="round" />
+              <circle cx="200" cy="186" r="5" fill="#b3261e" />
+              <g id="guy-eyes">
+                <ellipse cx="160" cy="234" rx="12" ry="15" fill="#17171a" />
+                <ellipse cx="240" cy="234" rx="12" ry="15" fill="#17171a" />
+                <circle cx="164" cy="229" r="4" fill="#fff" />
+                <circle cx="244" cy="229" r="4" fill="#fff" />
+              </g>
+              <circle cx="128" cy="272" r="16" fill="#f29c8a" opacity="0.6" />
+              <circle cx="272" cy="272" r="16" fill="#f29c8a" opacity="0.6" />
+              <ellipse id="guy-mouth" cx="200" cy="292" rx="25" ry="19" fill="#c2455a" />
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div id="caps" data-track-kind="captions" data-layout-allow-caption-zone>
+<!--CAPS-->
+      </div>
+
+<!--AUDIO-->
+      <audio id="music" class="clip" src="assets/music.wav" data-start="0" data-duration="{{TOTAL}}" data-track-index="8" data-volume="0.2"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const TOTAL = {{TOTAL}};
+      const WORDS = /*MOUTH*/;
+      const SCENES = /*SCENES*/;
+      tl.fromTo("#bg-blob", { x: 0, y: 0, scale: 1 }, { x: 120, y: -90, scale: 1.12, duration: TOTAL, ease: "none" }, 0);
+      // narrator: mouth opens on every spoken word
+      tl.set("#guy-mouth", { scaleY: 0.22, scaleX: 0.9, transformOrigin: "50% 50%" }, 0);
+      WORDS.forEach((t) => {
+        tl.to("#guy-mouth", { scaleY: 1, scaleX: 1, duration: 0.07, ease: "power1.out" }, t);
+        tl.to("#guy-mouth", { scaleY: 0.22, scaleX: 0.9, duration: 0.1, ease: "power1.in" }, t + 0.11);
+      });
+      // head bob while talking, point on each new scene, blink
+      tl.fromTo("#guy-head, #guy-face", { rotation: -2, transformOrigin: "50% 90%" }, { rotation: 2, duration: 0.9, repeat: Math.floor(TOTAL / 0.9) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.fromTo("#guy-all", { y: 0 }, { y: -10, duration: 0.45, repeat: Math.floor(TOTAL / 0.45) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.set("#guy-arm", { rotation: 0, transformOrigin: "20% 95%" }, 0);
+      SCENES.forEach((s) => {
+        tl.to("#guy-arm", { rotation: -16, duration: 0.18, ease: "power2.out" }, s + 0.1);
+        tl.to("#guy-arm", { rotation: 0, duration: 0.5, ease: "elastic.out(1, 0.5)" }, s + 0.3);
+      });
+      tl.set("#guy-eyes", { scaleY: 1, transformOrigin: "50% 50%" }, 0);
+      for (let b = 2.3; b < TOTAL - 0.3; b += 3.1) {
+        tl.to("#guy-eyes", { scaleY: 0.1, duration: 0.06 }, b);
+        tl.to("#guy-eyes", { scaleY: 1, duration: 0.08 }, b + 0.08);
+      }
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
